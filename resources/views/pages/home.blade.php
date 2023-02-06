@@ -2,6 +2,16 @@
 
 @section('content')
     
-    <h1>caica</h1>
+    <h1>COMICS:</h1>
 
+
+    <ul>
+        
+        @foreach ($comics as $comic)
+        <li>
+            {{ $comic -> firstName }} 
+        </li>
+        @endforeach
+        
+    </ul>
 @endsection
