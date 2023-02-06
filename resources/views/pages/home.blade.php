@@ -4,12 +4,13 @@
     
     <h1>COMICS:</h1>
 
+    <a href="{{ route('comic.create') }}">INSERISCI NUOVO COMIC</a>
 
     <ul>
         
         @foreach ($comics as $comic)
         <li>
-            {{ $comic -> firstName }} 
+            {{ $comic -> firstName }} |  {{ $comic -> lastname }} 
         </li>
         @endforeach
         

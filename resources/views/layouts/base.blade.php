@@ -9,7 +9,6 @@
 </head>
 <body>
 
-    @include('components.errors')
     @yield('content')
     
 </body>
