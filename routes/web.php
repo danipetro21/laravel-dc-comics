@@ -23,3 +23,6 @@ Route :: get('/comic/create', [MainController :: class, 'comicCreate'])
 //--- DELETE
 Route :: get('/comic/delete/{comic}', [MainController :: class, 'comicDelete'])
     -> name('comic.delete');
+//--- SHOW
+Route :: get('/comic/show/{comic}', [MainController :: class, 'comicShow'])
+    -> name('comic.show');

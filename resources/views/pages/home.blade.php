@@ -10,7 +10,9 @@
         
         @foreach ($comics as $comic)
         <li>
+            <a href="{{ route('comic.show', $comic) }}">
             {{ $comic -> firstName }} |  {{ $comic -> lastname }} 
+            </a>
             <a href="{{ route('comic.delete', $comic) }}"> - X</a>
         </li>
         @endforeach

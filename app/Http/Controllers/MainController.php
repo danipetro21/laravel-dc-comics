@@ -55,4 +55,10 @@ class MainController extends Controller
         return redirect() -> route('home');
 
     }
+
+    //--- SHOW
+
+    public function comicShow (Comic $comic){
+        return view('pages.show', compact('comic'));
+    }
 }
