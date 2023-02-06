@@ -14,6 +14,8 @@
             {{ $comic -> firstName }} |  {{ $comic -> lastname }} 
             </a>
             <a href="{{ route('comic.delete', $comic) }}"> - X</a>
+
+            <a href="{{ route('comic.edit', $comic) }}"> - E</a>
         </li>
         @endforeach
         
