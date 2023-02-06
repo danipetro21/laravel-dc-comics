@@ -12,10 +12,14 @@ use App\Http\Controllers\MainController;
 | contains the "web" middleware group. Now create something great!
 |
 */
-
+//--- HOME
 Route :: get('/', [MainController :: class, 'home'])
     -> name('home');
+//--- CREATE / STORE
 Route :: get('/comic/create', [MainController :: class, 'comicCreate'])
     -> name('comic.create');
     Route :: post('/comic/store', [MainController :: class, 'comicStore'])
     -> name('comic.store');
+//--- DELETE
+Route :: get('/comic/delete/{comic}', [MainController :: class, 'comicDelete'])
+    -> name('comic.delete');

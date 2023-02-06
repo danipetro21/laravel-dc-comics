@@ -7,7 +7,7 @@ use App\Models\Comic;
 
 class MainController extends Controller
 {
-    //
+    
     //--- INDEX
 
     public function home() {
@@ -18,12 +18,14 @@ class MainController extends Controller
     }
 
     //--- CREATE
+
     public function comicCreate(){
         return view('pages.create');
     }
-
+        //--- STORE
     public function comicStore(Request $request){
 
+        //--- validazione dei dati lato backend
         $data = $request -> validate([
             'firstName' => 'required|string|max:32',
             'lastName' => 'required|string|max:32',
@@ -32,7 +34,8 @@ class MainController extends Controller
 
         ]);
 
-        
+        //--- inserimento dei dati all'interno del database tramite 
+        //    l'oggetto COMIC
         $comic = new Comic();
         $comic -> firstName = $data['firstName'];
         $comic -> lastName = $data['lastName'];
@@ -41,5 +44,15 @@ class MainController extends Controller
 
         $comic -> save();
         return redirect() -> route('home');
+    }
+
+    //--- DELETE
+
+    public function comicDelete(Comic $comic){
+
+        $comic -> delete();
+
+        return redirect() -> route('home');
+
     }
 }
