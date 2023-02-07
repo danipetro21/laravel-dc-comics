@@ -85,12 +85,14 @@ class MainController extends Controller
             'heigth' => 'integer|min:0'
         ]);
 
-        $comic->firstName = $data['firstName'];
-        $comic->lastName = $data['lastName'];
-        $comic->dateOfBirth = $data['dateOfBirth'];
-        $comic->heigth = $data['heigth'];
+        // $comic->firstName = $data['firstName'];
+        // $comic->lastName = $data['lastName'];
+        // $comic->dateOfBirth = $data['dateOfBirth'];
+        // $comic->heigth = $data['heigth'];
 
-        $comic->save();
+        // $comic->save();
+
+        $comic -> update($data);
         return redirect()->route('home');
     }
 }
