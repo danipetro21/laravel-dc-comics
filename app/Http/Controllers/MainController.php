@@ -39,12 +39,15 @@ class MainController extends Controller
 
         //--- inserimento dei dati all'interno del database tramite 
         //    l'oggetto COMIC
-        $comic = new Comic();
-        $comic->firstName = $data['firstName'];
-        $comic->lastName = $data['lastName'];
-        $comic->dateOfBirth = $data['dateOfBirth'];
-        $comic->heigth = $data['heigth'];
+        // $comic = new Comic();
+        // $comic->firstName = $data['firstName'];
+        // $comic->lastName = $data['lastName'];
+        // $comic->dateOfBirth = $data['dateOfBirth'];
+        // $comic->heigth = $data['heigth'];
 
+
+        $comic = Comic :: create($data);
+        
         $comic->save();
         return redirect()->route('home');
     }
